@@ -1,5 +1,5 @@
-main.aux
-main.toc
-main.out
-main.log
-main.pdf
+*.aux
+*.toc
+*.out
+*.log
+*.pdf
