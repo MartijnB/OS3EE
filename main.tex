@@ -1,0 +1,19 @@
+\documentclass[paper=a4, fontsize=11pt, oneside]{memoir}
+
+\input{Components/packages.tex}
+\input{Components/settings.tex}
+
+\begin{document}
+  \input{Components/cover.tex}
+
+  \begin{KeepFromToc}
+    \tableofcontents
+  \end{KeepFromToc}
+
+  \pagenumbering{arabic}
+
+  \input{Chapters/01_Test.tex}
+
+  \input{Components/bibliography.tex}
+
+\end{document}

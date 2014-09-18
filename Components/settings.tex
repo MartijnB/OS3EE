@@ -1,0 +1,46 @@
+\pgfplotsset{compat=1.9}
+
+%% Be sloppy with hypenation, prevents most of the - at the end of a line
+\sloppy
+
+%\chapterstyle{veelo}
+
+\definecolor{sgred}{RGB}{255,64,25}
+\definecolor{sggrey}{RGB}{217,217,217}
+\definecolor{sggrey2}{RGB}{71,64,48}
+
+%% Setup a nice font to utilize
+% \renewcommand{\familydefault}{\sfdefault}
+% \usepackage{helvet}
+%% \usepackage{avant}
+\RequirePackage[quiet]{fontspec}
+\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+
+\newfontfamily\bodyfont[]{Helvetica Neue}
+\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+
+%% Make sure the paragraphs do not indent the beginning of the line
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
+
+% Set the margins to be 2.5cm around except for left
+\setlrmarginsandblock{3.75cm}{2.5cm}{*}
+\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\checkandfixthelayout
+
+%\makeglossaries
+
+%%\addtolength{\textwidth}{3cm}
+%%\addtolength{\foremargin}{-3cm}
+%%\checkandfixthelayout
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% TeX-engine: xetex
+%%% TeX-PDF-mode: t
+%%% End: 
