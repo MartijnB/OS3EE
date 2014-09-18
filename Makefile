@@ -1,5 +1,5 @@
 all:
-	-/usr/texbin/xelatex -shell-escape -interaction=nonstopmode "\input" main.tex
+	-pdflatex -interaction=nonstopmode main.tex
 
 	open main.pdf
 
