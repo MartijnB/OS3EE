@@ -1,0 +1,78 @@
+\chapter{XML and RSS}
+\label{chap:XML and RSS}
+Really Simple Syndication (RSS) is used on a lot of websites today. This chapter will outline what RSS is and how XML is involved in RSS.
+
+\section{History}
+The first version of RSS was v0.9 in March 1999, originally developed by \textbf{Dan Libby} and \textbf{Ramanathan V. Guha} during their time at Netscape. The original name back then was RDF Site Summary and changed to RSS when RSS 0.91 was released. The name change was done by Dan Libby.
+
+RSS 0.90, 1.0 and 1.1 would be still dubbed RDF Site Summary, whereas RSS 0.91 - 0.94 and RSS 2.0 would be dubbed Really Simple Syndication. This confusion was caused by the two different groups that worked on the RSS standard. There was the RSS-DEV Working Group used the name RDF whereas Winer used the name RSS.
+
+\section{What is RSS}
+\label{sec:what-is-rss}
+Rich Site Summary or Really Simple Syndication is used to syndicate data from a website. Today there are a lot of websites that use the data as a source for the blog or news post. RSS provides a way to syndicate the data (i.e. make the data available for others). A standard XML format is used for creating the feed and thus can be parsed by other programs\footnote{http://ec.europa.eu/ipg/standards/markup/web-content-syndication/index\_en.htm}.
+
+\break
+An example of an RSS is shown below\footnote{http://en.wikipedia.org/wiki/RSS\#Example}.
+
+\lstset{
+	language=xml,
+	tabsize=3,
+	caption=An example of RSS,
+	label=code:xslfo,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{OliveGreen},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={food,name,price},
+	emphstyle={\color{magenta}}
+}
+\lstinputlisting{Chapters/01_XML_RSS.example1.xml}
+
+As you may have seen from the example above, XML is used in the RSS schema. You can see in the declaration that XML is used and the root element contains the RSS version that is used.
+
+\section{How RSS uses XML}
+As explained in Section \ref{sec:what-is-rss} RSS is used to syndicate data from a website. There is no official DTD, but there are some DTDs that you could use. These DTDs are made available by the community.
+
+Something other noteworthy is the fact that there is not a XSD. In this case the specifications specifies what the XML schema is. But there is \textbf{not} an official XSD.
+
+Since the newest release it is required that any future additions are required to be modules. These modules need to be implemented as XML namespaces as is outlined in the next section (\ref{sec:rss-module-example}).
+
+\section{RSS Module example}
+\label{sec:rss-module-example}
+This section will give a simple sample on how modules can be integrated in current RSS schemas.
+
+\break
+An example of RSS modules is shown below\footnote{http://www.disobey.com/detergent/2002/extendingrss2/}
+\lstset{
+	language=xml,
+	tabsize=3,
+	caption=An example of RSS and XML namespaces,
+	label=code:xslfo,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{OliveGreen},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={food,name,price},
+	emphstyle={\color{magenta}}
+}
+\lstinputlisting{Chapters/01_XML_RSS.example2.xml}
+
+The new namespace \textit{BlogChannel} is declared at line 7. This qualified namespace is further used throughout the RSS file on line 7, 8, and 9. This solves the problem of name clashing, which can occur when you have two separate XML files that you would like to merge. Using XML namespaces this can easily be solved, which has been adopted in the newest RSS release.

@@ -1,0 +1,14 @@
+ <rss version="2.0"
+     xmlns="http://backend.userland.com/rss2"
+     xmlns:blogChannel="http://backend.userland.com/blogChannelModule">
+ <channel>
+  <title>Scripting News</title>
+  <link>http://www.scripting.com/</link>
+  <blogChannel:blogRoll>http://radio.weblogs.com/ ... /file.opml</blogChannel:blogRoll>
+  <blogChannel:mySubscriptions>http://ra ... /file.opml</blogChannel:mySubscriptions>
+  <blogChannel:blink>http://inessential.com/</blogChannel:blink>
+  .
+  .
+  .
+ </channel>
+ </rss>
