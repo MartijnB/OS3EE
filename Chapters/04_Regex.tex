@@ -1,0 +1,80 @@
+\chapter{Regex explained video}
+\label{chao:regex-explained}
+
+The \textit{Reg\(exp\)\{2\}lained}\footnote{http://www.youtube.com/watch?v=EkluES9Rvak}  is a real interesting video about how Regex can be used. It shows some of the examples that you could use in certain scenarios. This chapter will discuss some of these examples and explain how they work.
+
+\section{Matching an URI}
+\label{sec:matchin-an-uri}
+So suppose we have the following line in our HTML file:
+\begin{lstlisting}[
+	language=html,
+	tabsize=3,
+	caption=Example line in HTML file,
+	label=code:xslfo,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{OliveGreen},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={food,name,price},
+	emphstyle={\color{magenta}}
+]
+<a href="http://www.google.com">
+\end{lstlisting}
+
+If you want to get the URI, you could use the following regular expression.
+\begin{lstlisting}[
+	tabsize=3,
+	caption=Example regex,
+	label=code:xslfo,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{OliveGreen},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={food,name,price},
+	emphstyle={\color{magenta}}
+]
+href=\"([^\"]+) "
+\end{lstlisting}
+There are some problems with this solution.
+\begin{enumerate}
+\item It would also capture \textit{href}
+\item It would capture \textit{=}
+\item And last but not at least, it would capture the quotes \textit{"}
+\end{enumerate}
+This is not what we want, since it would result in the matching of \textit{href="http://www.google.com"}. It is possible to solve this with lookarounds.
+
+\section{Introducing lookarounds}
+\label{sec:introducing-lookarounds}
+Lookarounds, as the name might reveal, enforces something to be, or not to be, in front or after the expression. It is \textbf{not} part of the match. The only downside with lookarounds is that it is not included in every regex engine. It is also not POSIX compliant, but it works in PCRE, which is a very common regex engine (perl regex style).
+\\
+\\
+The syntax is as follow\footnote{Information from: http://www.rexegg.com/regex-lookarounds.html}.\\
+\begin{tabular}{l | l || p{5cm}}
+Lookaround & Name & What it does \\ \hline
+\texttt{(?=foo)} & Lookahead & Asserts that what immediately follows the current position in the string is foo \\ \hline
+\texttt{(?<=foo))} & Lookbehind & Asserts that what immediately precedes the current position in the string is foo \\ \hline
+\texttt{(?!foo)} & Negative Lookahead & Asserts that what immediately follows the current position in the string is not foo \\ \hline
+\texttt{(?<!foo)} & Negative Lookbehind & Asserts that what immediately precedes the current position in the string is not foo \\ \hline
+\end{tabular}
+
+\section{Using lookaround}
+\label{sec:using-lookaround}
+Now lets use the information from Section \ref{sec:introducing-lookarounds} and use this information to match the URI like we did in Section \ref{sec:matching-an-uri}.
