@@ -9,25 +9,27 @@ XLS-FO\footnote{http://en.wikipedia.org/wiki/XSL\_Formatting\_Objects}\footnote{
 
 It starts with a XML declaration and a root element. The root element also declares the namespace for XLS-FO. In the root element you would have a layout-master-set element which holds one or more page templates. The simple-page-master element, which is encapsulated in the layout-master-select, contains a single page name and must have a unique master-name attribute. The page-sequence elements describe the page contents and the master-reference attribute refers to the simple-page-master template (which must be the same name). 
 
-    \lstset{
-    language=xml,
-    tabsize=3,
-    caption=An example of XSL-FO,
-    label=code:xslfo,
-    frame=shadowbox,
-    rulesepcolor=\color{gray},
-    xleftmargin=20pt,
-    framexleftmargin=15pt,
-    keywordstyle=\color{blue}\bf,
-    commentstyle=\color{OliveGreen},
-    stringstyle=\color{red},
-    numbers=left,
-    numberstyle=\tiny,
-    numbersep=5pt,
-    breaklines=true,
-    showstringspaces=false,
-    basicstyle=\footnotesize,
-    emph={food,name,price},emphstyle={\color{magenta}}}
-    \lstinputlisting{Chapters/02_XSL-FO.example1.xml}
+\lstset{
+	language=xml,
+	tabsize=3,
+	caption=An example of XSL-FO,
+	label=code:xslfo,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	xleftmargin=20pt,
+	framexleftmargin=15pt,
+	keywordstyle=\color{blue}\bf,
+	commentstyle=\color{OliveGreen},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	emph={food,name,price},
+	emphstyle={\color{magenta}}
+}
+\lstinputlisting{Chapters/02_XSL-FO.example1.xml}
 
 As you can see in listing \ref{code:xslfo} the page-sequence refers to the simple-page-master, since it has the same name. The block is encapsulated in the flow, which is encapsulated in the page-sequence. The page-sequence refers to the simple-page-master template.
