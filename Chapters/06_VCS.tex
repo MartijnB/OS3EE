@@ -1,0 +1,25 @@
+\chapter{CVS}
+\label{chap:cvs}
+This chapter would describe the Git talk\footnote{https://www.youtube.com/watch?v=4XpnKHJAok8} with Linus Torvald during a Google Talk. The following sections will give some insights about how Git works and why, in Linus Torvald's opinion, we should use Git.
+
+\section{Git}
+\label{sec:git}
+Git is a distributed revision control and source code management (SCM) system, according to Wikipedia\footnote{http://en.wikipedia.org/wiki/Git\_(software)}. The most important part here is distributed and we should ask ourself why we want to have a distribuetd repository.
+
+\subsection{Distributed}
+\label{sec:git-distributed}
+Using the idiology of Linus Torvald, distributed can solve the problems we experience with other CVS systems (e.g. svn, VCS). With the old systems you would have to wait longer for commiting, cloning, and pushing your data to the centralised system. If you have the option to clone a few thousand files each time or you can just simply work on your local branch and  push now, what would you choose? Probably the method of having a local branch.
+
+With a distributed system you also have \textbf{less} problems with authorisation. It is you, \textbf{the user}, who is in control of authorisation. You can decide yourself if you want to pull and merge someone's code or to ignore the changes of oneother. It is therefore far more simpeler and also have the effect on less politics in your company (i.e. deciding if someone should have write permissions to a repository).
+
+One other important aspect of a distributed repository is the fact that \textbf{others} have nearly the exact same copy of the server. They have the exact same history as you have, and is available on the server. Imagine a scenario where your laptop and the server crashes, you can still use someone's else repository for having access to the data. This repository can also be put on the server and there is no difference in it. We will talk about the security and integrity aspect in Section \ref{sec:integrity} and Section \ref{sec:security}
+
+\section{Integrity}
+\label{sec:integrity}
+But how can you trust the data that is in the repository? If there is a certain scenario where you have to copy a repository from someone else and push that to your server, how can you know that this repository has not been changed since your last commit or has not been compromised.
+
+We can assume a repository to be uncomprised and authentic when we compare the SHA-1 hashes. If those hashes are the same we are assured that neither of the files in the repositories have been altered. You can therefore assume that the repository is safe, \textit{although SHA-1 has already suffered some attacks\footnote{http://en.wikipedia.org/wiki/SHA-1\#Attacks}}.
+
+\section{Security}
+\label{sec:security}
+Security is also important. If we talk about authorisation there a different methods to provide access to your repository, it also depends on the applications used. It is also about the trust chain that you have. You allow specific users to modify your repository, but you can also pull from other repositories and merge their code into your codestream. It is therefore up to you on how you manage your repository.
