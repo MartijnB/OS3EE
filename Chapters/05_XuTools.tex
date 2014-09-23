@@ -1,0 +1,9 @@
+\chapter{XuTools}
+
+XuTool\footnote{https://www.usenix.org/conference/lisa12/technical-sessions/presentation/weaver}\footnote{https://github.com/gabriel-weaver/xutools} is a replacement for the traditional Unix text-processing tools. It was written in 2012 by Gabriel Waver and Sean Smith with the idea that providing a high-level, abtracted way to process text would result in an easier method to extract certain information from it. They have written a Xu version of grep, wc and diff.
+
+
+XuTools works by parsing the data with a given (or builtin) grammar and build a tree around it. You can navigate through this tree with XuPaths. This describe what you want to process from the tree and how. The idea and design of XuPath was heavily influenced by XPath that provides similar capabilities for XML.
+
+XuTools is intended to be able to process any structured text. However to be able to process it, it requires a custom grammar written for the specific format. However once this grammar is written, everybody should be able to extract advanced information from the data.
+
