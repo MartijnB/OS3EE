@@ -1,3 +1,3 @@
-OS3ES
+OS3 Essential Skills
 =====
 Latex Assignment
