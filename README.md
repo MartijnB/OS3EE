@@ -4,6 +4,6 @@ Latex Assignment
 
 Authors
 
-Wouter Miltenburg
-Martijn Bogaard
-Xavier Torrent Gorjón
+Wouter Miltenburg  
+Martijn Bogaard  
+Xavier Torrent Gorjón  
