@@ -2,6 +2,15 @@
 \label{chap:XML and RSS}
 Really Simple Syndication (RSS) is used on a lot of websites today. This chapter will outline what RSS is and how XML is involved in RSS.
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=1cm]{Chapters/01_rss_icon.png}
+\caption{Official logo\footnotemark}
+\end{center}
+\end{figure}
+\footnotetext{Image from: http://nl.wikipedia.org/wiki/Really_Simple_Syndication}
+
+
 \section{History}
 The first version of RSS was v0.9 in March 1999, originally developed by \textbf{Dan Libby} and \textbf{Ramanathan V. Guha} during their time at Netscape. The original name back then was RDF Site Summary and changed to RSS when RSS 0.91 was released. The name change was done by Dan Libby.
 
@@ -11,7 +20,6 @@ RSS 0.90, 1.0 and 1.1 would be still dubbed RDF Site Summary, whereas RSS 0.91 -
 \label{sec:what-is-rss}
 Rich Site Summary or Really Simple Syndication is used to syndicate data from a website. Today there are a lot of websites that use the data as a source for the blog or news post. RSS provides a way to syndicate the data (i.e. make the data available for others). A standard XML format is used for creating the feed and thus can be parsed by other programs\footnote{http://ec.europa.eu/ipg/standards/markup/web-content-syndication/index\_en.htm}.
 
-\break
 An example of an RSS is shown below\footnote{http://en.wikipedia.org/wiki/RSS\#Example}.
 
 \lstset{
@@ -50,7 +58,6 @@ Since the newest release it is required that any future additions are required t
 \label{sec:rss-module-example}
 This section will give a simple sample on how modules can be integrated in current RSS schemas.
 
-\break
 An example of RSS modules is shown below\footnote{http://www.disobey.com/detergent/2002/extendingrss2/}
 \lstset{
 	language=xml,
@@ -76,3 +83,18 @@ An example of RSS modules is shown below\footnote{http://www.disobey.com/deterge
 \lstinputlisting{Chapters/01_XML_RSS.example2.xml}
 
 The new namespace \textit{BlogChannel} is declared at line 7. This qualified namespace is further used throughout the RSS file on line 7, 8, and 9. This solves the problem of name clashing, which can occur when you have two separate XML files that you would like to merge. Using XML namespaces this can easily be solved, which has been adopted in the newest RSS release.
+
+\section{Mandatory RSS elements}
+\label{sec:mandatory-rss-elements}
+In table \ref{table:mandatory-rss-elements}, you can see which elements are required to be in a valid RSS file.
+
+\begin{table}[ht]
+\begin{tabular}{c | c}
+Element & Explanation \\ \hline
+\texttt{<title>} & Title of the RSS channel \\ \hline
+\texttt{<link>} & Link to the RSS channel item \\ \hline
+\texttt{<description>} & Description of the RSS channel \\ \hline 
+\end{tabular}
+\caption{RSS required elements}
+\label{table:mandatory-rss-elements}
+\end{table}
