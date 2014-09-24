@@ -1,7 +1,7 @@
 \chapter{Regex explained video}
 \label{chap:regex-explained}
 
-The \textit{Reg\(exp\)\{2\}lained}\footnote{http://www.youtube.com/watch?v=EkluES9Rvak}  is a real interesting video about how Regex can be used. It shows some of the examples that you could use in certain scenarios. This chapter will discuss some of these examples and explain how they work.
+\cite{regex-explained}  is a real interesting video about how Regex can be used. It shows some of the examples that you could use in certain scenarios. This chapter will discuss some of these examples and explain how they work.
 
 \begin{figure}[ht]
 \begin{center}
@@ -76,7 +76,8 @@ This is not what we want, since it would result in the matching of \textit{href=
 Lookarounds, as the name might reveal, enforces something to be, or not to be, in front or after the expression. It is \textbf{not} part of the match. The only downside with lookarounds is that it is not included in every regex engine. It is also not POSIX compliant, but it works in PCRE, which is a very common regex engine (perl regex style).
 \\
 \\
-The syntax is as follow\footnote{Information from: http://www.rexegg.com/regex-lookarounds.html}.\\
+The syntax is as follows:\\
+\begin{table}
 \begin{tabular}{l | l || p{5cm}}
 Lookaround & Name & What it does \\ \hline
 \texttt{(?=foo)} & Lookahead & Asserts that what immediately follows the current position in the string is foo \\ \hline
@@ -84,6 +85,8 @@ Lookaround & Name & What it does \\ \hline
 \texttt{(?!foo)} & Negative Lookahead & Asserts that what immediately follows the current position in the string is not foo \\ \hline
 \texttt{(?<!foo)} & Negative Lookbehind & Asserts that what immediately precedes the current position in the string is not foo \\ \hline
 \end{tabular}
+\caption{Table showing lookarounds, from \cite{regex-lookaround}}
+\end{table}
 
 \section{Using lookaround}
 \label{sec:using-lookaround}
